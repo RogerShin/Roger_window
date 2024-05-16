@@ -10,4 +10,21 @@ _Writing in Markdown is not that hard!_
 If you're thinking to yourself, **_This is unbelievable_**, you'd probably be right.
 
 ## 第2堂課
+# Header one
+## Header two
+### Header three
+#### Header four
+##### Header five
+###### Header six
+
+#### _Colombian Symbolism in One Hundred Years of Solitude_
+
+Here's some words about the book _One Hundred Years..._.
+
 ## 第3堂課
+[Search for it.](www.google.com)
+
+[You're _really, really_ going to want to see this.](www.dailykitten.com)
+
+#### The Latest News from [the BBC](www.bbc.com/news)
+
