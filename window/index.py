@@ -14,8 +14,6 @@ class Window(tk.Tk):
         # 多做一些事
         self.title("我是第一個GUI程式")
 
-
-
 if __name__ == '__main__':
     names:list[str] = get_names()
     window:Window = Window()
