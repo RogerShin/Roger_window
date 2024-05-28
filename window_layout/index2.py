@@ -9,15 +9,7 @@ class Window(tk.Tk):
         self.title("pack1")
         # 設定視窗大小
         self.geometry('500x200')
-        # btn1:ttk.Button = ttk.Button(self, text = "Top")
-        # btn1.pack()
-
-        # btn2:ttk.Button = ttk.Button(self, text = "Middle")
-        # btn2.pack()
-
-        # btn3:ttk.Button = ttk.Button(self, text = "Bottom")
-        # btn3.pack()
-
+   
         ttk.Button(self, text = "Left").pack(side = 'left')
         ttk.Button(self, text = "This is the Center Button").pack(side = 'left')
         ttk.Button(self, text = "Right").pack(side = 'left')
