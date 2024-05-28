@@ -15,11 +15,14 @@ class Window(tk.Tk):
         # 多做一些事
         self.title(title)
         # 視窗大小
-        self.geometry('300x300')
+        # self.geometry('300x300')
         # 寫到視窗內的內容
-        label:ttk.Label = ttk.Label(self, text = "Hello! World!")
-        label.pack()
-
+        label:ttk.Label = ttk.Label(self,
+                                    text = "Hello! World!",
+                                    font = ('Arial', 20, 'bold'),
+                                    foreground = 'red')
+        label.pack(padx = 100, pady = 100)
+        
 if __name__ == '__main__':
     names:list[str] = get_names()
     window:Window = Window(title = "我是第一個GUI程式")
