@@ -21,7 +21,7 @@ class Window(tk.Tk):
                                     text = "Hello! World!",
                                     font = ('Arial', 20, 'bold'),
                                     foreground = 'red')
-        label.pack(padx = 100, pady = 100)
+        label.pack(padx = 100, pady = 40)
         
 if __name__ == '__main__':
     names:list[str] = get_names()
