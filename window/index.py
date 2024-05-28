@@ -1,5 +1,6 @@
 import os
 import tkinter as tk
+from tkinter import ttk
 os.system("cls")
 
 def get_names() -> list[str]:
@@ -13,6 +14,11 @@ class Window(tk.Tk):
         super().__init__()
         # 多做一些事
         self.title(title)
+        # 視窗大小
+        self.geometry('300x300')
+        # 寫到視窗內的內容
+        label:ttk.Label = ttk.Label(self, text = "Hello! World!")
+        label.pack()
 
 if __name__ == '__main__':
     names:list[str] = get_names()
