@@ -12,13 +12,13 @@ class Window(tk.Tk):
         self.resizable(False, False)
         box = ttk.Frame()
         box.pack(fill = 'x', padx = 10, pady = 10)
-        ttk.Label(box, text="姓名:", font = ("Arial",13, "bold")).pack(fill='x')
+        ttk.Label(box, text="姓名:", font = ("Arial", 13, "bold")).pack(fill='x')
         name = ttk.Entry(box, font= (13))
         name.pack(side='left', pady = 3)
         name.focus()
         box2 = ttk.Frame()
         box2.pack(fill = 'x', padx = 10)
-        ttk.Label(box2, text = "性別:", font = ("Arial",13, "bold")).pack(fill='x')
+        ttk.Label(box2, text = "性別:", font = ("Arial", 13, "bold")).pack(fill='x')
         checkone = tk.Checkbutton(box2, text = "男", font =(13) )
         checkone.pack(side='left')
         checkone.deselect()
@@ -38,8 +38,6 @@ class Window(tk.Tk):
         boxbutt.pack(fill = 'x', padx = 10, pady = 5)
         boxbutt.place(relx = 0.6, rely= 0.45)
         ttk.Button(boxbutt, text = "Submit").pack(ipadx = 5,ipady = 5)
-
-
 
 if __name__ == '__main__':
    window:Window = Window()
