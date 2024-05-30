@@ -6,7 +6,7 @@ from tkinter import ttk
 class Window(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.iconphoto(False, tk.PhotoImage(file = "./images/user.png"))
+        self.iconphoto(True, tk.PhotoImage(file = "./images/user.png"))
         self.title("使用者登入畫面")
         self.geometry('500x300')
         self.resizable(False, False)
@@ -22,9 +22,8 @@ class Window(tk.Tk):
         password.pack(fill = 'x')
         passwordtxt:ttk.Entry = ttk.Entry(box, show = "*")
         passwordtxt.pack(fill = 'x', pady = 10)
-
         ttk.Button(text = "Log in").pack(ipadx = 5, ipady = 5, expand=1)
-
+        
 if __name__ == '__main__':
     window:Window = Window()
     window.mainloop()
