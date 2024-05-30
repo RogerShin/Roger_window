@@ -4,8 +4,8 @@ import tkinter as tk
 from tkinter import ttk
 
 class Window(tk.Tk):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self):
+        super().__init__()
         self.iconphoto(False, tk.PhotoImage(file = "./images/user.png"))
         self.title("使用者登入畫面")
         self.geometry('500x300')
@@ -20,7 +20,7 @@ class Window(tk.Tk):
 
         password:ttk.Label = ttk.Label(box, text = "密碼:", font=("Arial", 13, "bold"))
         password.pack(fill = 'x')
-        passwordtxt:ttk.Entry = ttk.Entry(box)
+        passwordtxt:ttk.Entry = ttk.Entry(box, show = "*")
         passwordtxt.pack(fill = 'x', pady = 10)
 
         ttk.Button(text = "Log in").pack(ipadx = 5, ipady = 5, expand=1)
