@@ -4,7 +4,6 @@ from pprint import pprint
 import tkinter as tk
 from tkinter import ttk
 from ttkthemes import ThemedTk
-
 import tools
 
 class Window(ThemedTk):
@@ -19,7 +18,6 @@ class Window(ThemedTk):
         title_frame = ttk.Frame(self, style='Top.TFrame', borderwidth=2, relief='groove')
         ttk.Label(title_frame, text="全台空氣品質指標(AQI)", style='Top.TLabel').pack(expand=True, fill='y')
         title_frame.pack(ipadx=100, ipady=30, padx=10, pady=10)
-
 
 def main():
     '''
