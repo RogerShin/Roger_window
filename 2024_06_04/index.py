@@ -20,10 +20,10 @@ class Window(ThemedTk):
         title_frame.pack(ipadx=100, ipady=30, padx=10, pady=10)
 
         func_frame = ttk.Frame(self, style='Top.TFrame', borderwidth=1, relief='groove')
-        ttk.Button(func_frame, text="AQI品質最好的5個", command=self.click1).pack(side='left', expand=True)
-        ttk.Button(func_frame, text="AQI品質最差的5個", command=self.click2).pack(side='left', expand=True)
-        ttk.Button(func_frame, text="pm2.5品質最好的5個", command=self.click3).pack(side='left', expand=True)
-        ttk.Button(func_frame, text="pm2.5品質最差的5個", command=self.click4).pack(side='left', expand=True)
+        ttk.Button(func_frame, text="AQI品質最好的5個", command=self.click1).pack(side='left', expand=True, ipadx=15, ipady=15)
+        ttk.Button(func_frame, text="AQI品質最差的5個", command=self.click2).pack(side='left', expand=True, ipadx=15, ipady=15)
+        ttk.Button(func_frame, text="pm2.5品質最好的5個", command=self.click3).pack(side='left', expand=True, ipadx=15, ipady=15)
+        ttk.Button(func_frame, text="pm2.5品質最差的5個", command=self.click4).pack(side='left', expand=True, ipadx=15, ipady=15)
         func_frame.pack(ipadx=100, ipady=30, padx=10, pady=10)
     
     def click1(self):
