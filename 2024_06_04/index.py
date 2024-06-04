@@ -4,6 +4,7 @@ from pprint import pprint
 import tkinter as tk
 from tkinter import ttk
 from ttkthemes import ThemedTk
+from tkinter import messagebox
 import tools
 
 class Window(ThemedTk):
@@ -27,16 +28,17 @@ class Window(ThemedTk):
         func_frame.pack(ipadx=100, ipady=30, padx=10, pady=10)
     
     def click1(self):
-        print("click1")
+        messagebox.showinfo("information","Infomative message")
 
     def click2(self):
-        print("click2")
+        messagebox.showerror("Error","Error message")
 
     def click3(self):
-        print("click3")
+        messagebox.showwarning("Warning","Warning message")
 
     def click4(self):
-        print("click4")
+        answer:bool = messagebox.askyesno("還要嗎?")
+        print(answer)
 
 
 def main():
