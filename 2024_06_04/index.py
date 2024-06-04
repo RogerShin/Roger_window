@@ -14,11 +14,11 @@ class Window(ThemedTk):
         # self.option_add("*Font", "微軟正黑體 40")
         # ttk.Button(self, text="離開", command=self.destroy).pack()
         style = ttk.Style()
-        style.configure("Top.TFrame", background='#CCEEFF')
-        style.configure("Top.TLabel",font=('Helvetica', 25))        
-        title_frame = ttk.Frame(self, style='Top.TFrame')
-        ttk.Label(title_frame, text="全台空氣品質指標(AQI)", style='Top.TLabel').pack()
-        title_frame.pack(padx=100, pady=50)
+        style.configure("Top.TFrame")
+        style.configure("Top.TLabel",font=('Helvetica', 25, "bold", "italic"))        
+        title_frame = ttk.Frame(self, style='Top.TFrame', borderwidth=2, relief='groove')
+        ttk.Label(title_frame, text="全台空氣品質指標(AQI)", style='Top.TLabel').pack(expand=True, fill='y')
+        title_frame.pack(ipadx=100, ipady=30, padx=10, pady=10)
 
 
 def main():
