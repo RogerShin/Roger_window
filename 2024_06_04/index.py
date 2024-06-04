@@ -12,7 +12,6 @@ class Window(ThemedTk):
         super().__init__(**kwargs)
         self.title("AQI顯示")
         # self.option_add("*Font", "微軟正黑體 40")
-        # ttk.Button(self, text="離開", command=self.destroy).pack()
         style = ttk.Style()
         style.configure("Top.TFrame")
         style.configure("Top.TLabel",font=('Helvetica', 25, "bold", "italic"))        
