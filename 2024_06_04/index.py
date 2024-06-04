@@ -11,7 +11,14 @@ class Window(ThemedTk):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.title("AQI顯示")
-        ttk.Button(self, text="Quit", command=self.destroy).pack()
+        # self.option_add("*Font", "微軟正黑體 40")
+        # ttk.Button(self, text="離開", command=self.destroy).pack()
+        style = ttk.Style()
+        style.configure("Top.TFrame", background='#CCEEFF')
+        style.configure("Top.TLabel",font=('Helvetica', 25))        
+        title_frame = ttk.Frame(self, style='Top.TFrame')
+        ttk.Label(title_frame, text="全台空氣品質指標(AQI)", style='Top.TLabel').pack()
+        title_frame.pack(padx=100, pady=50)
 
 
 def main():
@@ -25,7 +32,7 @@ def main():
         pprint(data)
     '''
 
-window = Window(theme="blue")
+window = Window(theme="arc")
 window.mainloop()
 
 if __name__ == '__main__':
