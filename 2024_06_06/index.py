@@ -71,6 +71,7 @@ class Window(ThemedTk):
 
 class ShowInfo(Dialog):
     def __init__(self, parent:Misc, title:str | None = None, message:str=""):
+        # 需在super().__init__前執行
         self.message = message
         super().__init__(parent=parent, title=title)
 
