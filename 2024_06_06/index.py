@@ -56,8 +56,7 @@ class Window(ThemedTk):
            return f"{value['county']} - {value['site_name']} - aqi:{value['aqi']} - 狀態:{value['status']} - {value['date']}"
        message_data:list[str]= list(map(abc, best_aqi))
        message = "\n".join(message_data)
-       print(message)
-       ShowInfo(parent=self,title="全台aqi最佳前5個區域")
+       ShowInfo(parent=self,title="全台aqi最佳前5個區域", message=message)
 
     def click2(self):
         self.update_data()
@@ -71,13 +70,14 @@ class Window(ThemedTk):
         ShowInfo(parent=self, title="這是Dialog")
 
 class ShowInfo(Dialog):
-    def __init__(self, parent:Misc, title:str | None = None):
+    def __init__(self, parent:Misc, title:str | None = None, message:str=""):
+        self.message = message
         super().__init__(parent=parent, title=title)
 
     def body(self, master:Frame) -> Misc|None:
-        text = tk.Text(self, height=8, font=('Helvetica', 25), width=40)
+        text = tk.Text(self, height=8, font=('Helvetica', 15), width=50)
         text.pack(padx=10, pady=10)
-        text.insert(tk.INSERT, "這是輸入的文字")
+        text.insert(tk.INSERT, self.message)
         text.config(state='disabled')
         return None
     
