@@ -1,6 +1,7 @@
 import requests
 from requests import JSONDecodeError
 from pydantic import BaseModel, RootModel, Field, field_validator
+from datetime import datetime
 
 # 使用 pydantic 解析資料
 class Site(BaseModel):
@@ -47,3 +48,11 @@ def get_data(all_data:dict[any]) -> list[dict]:
     records:Records = Records.model_validate(all_data['records'])
     data:list[dict] = records.model_dump()
     return data
+
+class AQI(object):
+    '''
+    利用class attribute儲存下載資料
+    利用class update_time儲存下載時間
+    '''
+    aqi_records:list[dict] | None = None
+    update_time:datetime | None = None
