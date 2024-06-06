@@ -7,6 +7,7 @@ from ttkthemes import ThemedTk
 from tkinter import messagebox
 from tkinter.simpledialog import Dialog
 import tools
+from datetime import datetime
 
 class Window(ThemedTk):
     def __init__(self, **kwargs):
@@ -38,8 +39,18 @@ class Window(ThemedTk):
             return data
         
     def click1(self):
-       data:list[dict] = self.download_parse_data()
-       print(data)
+       if (tools.AQI.aqi_records is None) or (tools.AQI.update_time is None):
+           tools.AQI.aqi_records = self.download_parse_data()
+           tools.AQI.update_time = datetime.now()
+        # 現在時間減去更新時間
+       elif((datetime.now() - tools.AQI.update_time).seconds >= 60 * 60):
+           tools.AQI.aqi_records = self.download_parse_data()
+           tools.AQI.update_time = datetime.now()
+       
+       data:list[dict] = tools.AQI.aqi_records
+       sorted_data:list[dict] = sorted(data,key = lambda value:value["aqi"])
+       best_aqi:list[dict] = sorted_data[:5]
+       print(best_aqi)
 
     def click2(self):
         messagebox.showerror("Error","Error message")
