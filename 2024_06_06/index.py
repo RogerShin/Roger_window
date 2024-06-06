@@ -27,15 +27,19 @@ class Window(ThemedTk):
         ttk.Button(func_frame, text="pm2.5品質最差的5個", command=self.click4).pack(side='left', expand=True, ipadx=15, ipady=15)
         func_frame.pack(ipadx=100, ipady=30, padx=10, pady=10)
     
-    def click1(self):
+    def download_parse_data(self) -> list[dict] | None:
         try:
             all_data:dict[any] = tools.download_json()
         except Exception as error:
             messagebox.showwarning("出現錯誤", "出現小錯誤, 請稍後再試!")
-            return
+            return None
         else:
             data:list[dict] = tools.get_data(all_data)
-            pprint(data)
+            return data
+        
+    def click1(self):
+       data:list[dict] = self.download_parse_data()
+       print(data)
 
     def click2(self):
         messagebox.showerror("Error","Error message")
