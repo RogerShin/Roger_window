@@ -1,5 +1,5 @@
 import os
-os.system("clear")
+os.system("cls")
 import tools
 import tkinter as tk
 from tkinter import ttk, Misc, Frame
@@ -14,6 +14,7 @@ class Window(ThemedTk):
         self.create_widgets()
     
     def create_widgets(self):
+        self.iconphoto(True, tk.PhotoImage(file = "./images/BMI_icon.png"))
         self.title("BMI 計算器")
         style = ttk.Style()
         style.configure("TOP.TLabel", font=('Helvetica',25,"bold","italic"))
@@ -28,7 +29,7 @@ class Window(ThemedTk):
         name_label.grid(row = 0, column=0, sticky=tk.W, padx=5, pady=5)
         self.name_entry = ttk.Entry(func_frame)
         self.name_entry.grid(row = 0, column = 1, sticky=tk.W, padx=5, pady=5)
-        # name_label.focus()
+        self.name_entry.focus()
 
         # height
         height_label = ttk.Label(func_frame, text = "身高：")
