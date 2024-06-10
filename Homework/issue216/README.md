@@ -2,6 +2,8 @@
 
 ## 請建立BMI計窗應用程式
 
+## [程式碼連接](./index.py)
+
 ### 跳錯誤訊息: 名字不能為空白
 ![index1.py](./images/index1.png)
 
