@@ -11,6 +11,7 @@ class Window(ThemedTk):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.geometry('500x300')
+        self.resizable(False,False)
         self.create_widgets()
     
     def create_widgets(self):
@@ -64,7 +65,7 @@ class Window(ThemedTk):
         bmi = result[0]['BMI']
 
         def bmi_info(value:dict, bmi:float) -> str:
-            return f"{value['name']}{'':>2}您好:\n{'':>10}BMI:{bmi}\n{'':>10}體重:{value['weigh_info']}\n{'':>10}建議:{value['advice']}"
+            return f" {value['name']} 您好:\n{'':>8}BMI : {bmi}\n{'':>8}體重:{value['weigh_info']}\n{'':>8}建議:{value['advice']}"
         message_data:list[str] = list(map(lambda value:bmi_info(value, bmi), result))
         message = ''.join(message_data)
 
@@ -77,7 +78,7 @@ class ShowInfo(Dialog):
         super().__init__(parent=parent, title=title)
 
     def body(self, master:Frame) -> Misc | None:
-        text = tk.Text(self, height=8, font=('Helvetica', 15), width=50)
+        text = tk.Text(self, height=5, font=('Helvetica', 15), width=45)
         text.pack(padx=10,pady=10)
         text.insert(tk.INSERT, self.message)
 
