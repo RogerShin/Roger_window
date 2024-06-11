@@ -2,8 +2,6 @@ import ubikedata
 import tkinter as tk
 from tkinter import ttk
 from ttkthemes import ThemedTk
-from pydantic import field_serializer
-from datetime import datetime
 
 class Window(ThemedTk):
     def __init__(self, theme:str|None, **kwargs):
