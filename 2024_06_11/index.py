@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from ttkthemes import ThemedTk
 from tkinter import messagebox
+from tools import CustomMessagebox
 
 
 class Window(ThemedTk):
@@ -79,10 +80,8 @@ class Window(ThemedTk):
             weight_change = weight - ideal_weight
             status_color = "red"
             advice = f"您需要至少減少 {abs(weight_change):.2f} 公斤才能達到正常體重。"
-            
-        result_message = f"{name}您好:\n   bmi:{bmi:.2f}\n   體重:{status}\n   建議:{advice}"
-        print(result_message)
-        
+        CustomMessagebox(self, title="BMI", name=name, bmi=bmi, status=status, advice=advice)
+
 def main():
     window = Window(theme='arc')
     window.mainloop()
