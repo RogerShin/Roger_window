@@ -14,7 +14,7 @@ class Window(ThemedTk):
         # self.resizable(False, False)
         style = ttk.Style()
         # print(style.theme_names())
-        style.configure('input.TFrame') #, background='#ffffff'
+        style.configure('input.TFrame')
         style.configure('press.TButton', font=("Arial", 20))
 
         titleFrame = ttk.Frame(self)
