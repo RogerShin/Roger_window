@@ -8,12 +8,12 @@ class Window(ThemedTk):
     def __init__(self, theme:str|None, **kwargs):
         super().__init__(**kwargs)
         self.title("BMI計算器")
-        # self.configure(bg = "#D3D3D3")
+        # self.configure(bg = "#D3D3D3"
         # self.geometry("350x350+100+50")
         # self.resizable(False, False)
         style = ttk.Style()
         # print(style.theme_names())
-        style.configure('input.TFrame', background='#ffffff')
+        style.configure('input.TFrame') #, background='#ffffff'
         style.configure('press.TButton', font=("Arial", 20))
 
         titleFrame = ttk.Frame(self)
@@ -47,14 +47,17 @@ class Window(ThemedTk):
         button_calculate =ttk.Button(self, text="計算", command=self.show_bmi_result, style='press.TButton')
         button_calculate.pack(side=tk.RIGHT, padx=(0,35), pady=(10), ipadx=5, ipady=5)
 
-
     def show_bmi_result(self):
         try:
             name:str = self.entry_name.get()
             height:int = int(self.entry_height.get())
             weight:int = int(self.entry_weight.get())
-        except Exception as error:
-            messagebox.showerror("Warning", "格式錯誤或欄位沒有填寫")
+        # except UnboundLocalError:
+        #     messagebox.showerror("Warning", "欄位沒有填寫")
+        except ValueError:
+            messagebox.showerror("Warning", "格式錯誤, 欄位沒有填寫")
+        except Exception:
+            messagebox.showerror("Warning", "不知明的錯誤")
         print(name, height, weight)
 
 def main():
