@@ -5,8 +5,9 @@ from ttkthemes import ThemedTk
 
 class Window(ThemedTk):
     def __init__(self, theme:str|None, **kwargs):
+
         super().__init__(**kwargs)
-        self.title("Ubike")
+        self.title("YouBike2.0 臺北市公共自行車即時資訊")
         self.geometry('1000x200')
         self.resizable(False, False)
         treeview_frame = ttk.Frame(self)
