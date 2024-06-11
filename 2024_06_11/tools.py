@@ -24,14 +24,14 @@ class CustomMessagebox(Dialog):
         self.value_name.grid(row=0, column=1, padx=5, pady=5)
 
         # BMI
-        label_bmi = ttk.Label(input_frame, text="BMI:")
+        label_bmi = ttk.Label(input_frame, text="BMI值:")
         label_bmi.grid(row=1, column=0, padx=5, pady=5, sticky=tk.E)
 
         self.value_bmi = ttk.Label(input_frame, text= f"{self.bmi:.2f}")
         self.value_bmi.grid(row=1, column=1, padx=5, pady=5)
 
         # status
-        label_status = ttk.Label(input_frame, text="體重 (kg):")
+        label_status = ttk.Label(input_frame, text="狀態:")
         label_status.grid(row=2, column=0, padx=5, pady=5, sticky=tk.E)
 
         self.value_status = ttk.Label(input_frame, text= self.status)
