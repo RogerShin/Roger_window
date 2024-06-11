@@ -32,7 +32,7 @@ class Window(ThemedTk):
         # 設定空字串
         self.name_value = tk.StringVar()
         self.name_value.set('')
-        
+
         entry_name = tk.Entry(input_frame, textvariable=self.name_value)
         entry_name.grid(row=0, column=1, padx=5, pady=5)
 
@@ -84,7 +84,7 @@ class Window(ThemedTk):
             advice = f"您需要至少增加 {abs(weight_change):.2f} 公斤才能達到正常體重。"
         elif 18.5 <= bmi <= 24.9:
             status = "正常"
-            status_color = "black"
+            status_color = "blue"
             advice = "您的體重正常，請保持！"
         else:
             status = "體重過重"
@@ -92,7 +92,7 @@ class Window(ThemedTk):
             weight_change = weight - ideal_weight
             status_color = "red"
             advice = f"您需要至少減少 {abs(weight_change):.2f} 公斤才能達到正常體重。"
-        CustomMessagebox(self, title="BMI", name=name, bmi=bmi, status=status, advice=advice)
+        CustomMessagebox(self, title="BMI", name=name, bmi=bmi, status=status, advice=advice, status_color=status_color)
     
     def __repr__(self):
         return "我是Window的實體"
