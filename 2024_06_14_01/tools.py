@@ -19,9 +19,11 @@ class CustomMessagebox(Dialog):
         map_widget = tkmap.TkinterMapView(map_frame, width=800,height=600,corner_radius=0)
 
         map_widget.pack()
-        map_widget.set_position(self.site.lat, self.site.lng) # 抓經緯度位置
+        marker = map_widget.set_position(self.site.lat, self.site.lng, marker=True) # 抓經緯度位置, marker座標
+        marker.set_text(f"{self.site.sarea}\n{self.site.sna}")
         map_widget.set_zoom(20) # 顯示大小
-        map_frame.pack(expand=True, fill='both')         
+
+        map_frame.pack(expand=True, fill='both')     
         #====================
         contain_frame.pack(expand=True, fill='both', pady=10,padx=30)
 
