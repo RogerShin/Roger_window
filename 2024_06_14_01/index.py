@@ -9,6 +9,7 @@ class Window(ThemedTk):
     def __init__(self, theme:str='arc', **kwargs):
         # 呼叫父類別
         super().__init__(theme=theme, **kwargs)
+        
         try:
             self.__data = ubikedata.load_data()
         except Exception as e:
