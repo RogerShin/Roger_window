@@ -1,6 +1,6 @@
 import requests
 from requests import Response
-from pydantic import BaseModel, RootModel, Field, field_validator,ConfigDict
+from pydantic import BaseModel, RootModel, Field, field_validator, ConfigDict
 
 def __download_json():
     url = "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json"
