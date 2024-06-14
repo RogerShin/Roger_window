@@ -59,7 +59,7 @@ class Window(ThemedTk):
        tree.configure(yscroll=scrollbar.set)
        scrollbar.grid(row=0, column=1, sticky='ns')
        tableFrame.pack(expand=True,fill=tk.BOTH, padx=20,pady=20)
-       #==========================================
+       #=====================================================
 
        mainFrame.pack(expand=True,fill=tk.BOTH,padx=10,pady=10)
        
