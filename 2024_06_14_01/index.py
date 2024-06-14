@@ -5,7 +5,6 @@ import ubikedata
 from ubikedata import FilterData, Info
 from tools import CustomMessagebox
 
-
 class Window(ThemedTk):
     # 自定義
     def __init__(self, theme:str='arc', **kwargs):
@@ -79,15 +78,16 @@ class Window(ThemedTk):
         for selected_item in tree.selection():
             item = tree.item(selected_item)
             record:list = item['values']
+            
             '''tuple 寫法'''
             # lat, lng = FilterData.get_selected_coordinate(sna=record[0], data=self.data)
             # print(lat, lng)
+
             '''dict 寫法'''
             site_data:Info= FilterData.get_selected_coordinate(sna=record[0], data=self.data)
             CustomMessagebox(self, title=site_data.sna, site=site_data)
 
-
-def main():
+def main(): 
     window = Window(theme='breeze')
     window.mainloop()
 
