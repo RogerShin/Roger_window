@@ -17,6 +17,10 @@ class Window(ThemedTk):
             messagebox.showwarning(title='警告',message=str(e))
 
         self._display_interface()
+    
+    @property
+    def data(self) -> list[dict]:
+        return self.__data
 
     def _display_interface(self):
        mainFrame = ttk.Frame(borderwidth=1, relief='groove')
@@ -44,6 +48,9 @@ class Window(ThemedTk):
        tree.column('rent_bikes', width=50, anchor='center')
        tree.column('retuen_bikes', width=50, anchor='center')
 
+       # bind使用者的事件
+       tree.bind('<<TreeviewSelect>>', self.item_selected)
+
        # generate sample data
     #    contacts = []
     #    for n in range(1, 100):
@@ -62,11 +69,13 @@ class Window(ThemedTk):
        #=====================================================
 
        mainFrame.pack(expand=True,fill=tk.BOTH,padx=10,pady=10)
-       
+    
+    def item_selected(self, event):
+        print(event)
 
-    @property
-    def data(self) -> list[dict]:
-        return self.__data
+   
+    
+
 
 
 def main():
