@@ -77,11 +77,12 @@ class Window(ThemedTk):
         for selected_item in tree.selection():
             item = tree.item(selected_item)
             record:list = item['values']
-            a, b = FilterData.get_selected_site(sna=record[0], data=self.data)
-            print(a)
-            print(b)
-
-
+            '''tuple 寫法'''
+            # lat, lng = FilterData.get_selected_coordinate(sna=record[0], data=self.data)
+            # print(lat, lng)
+            '''dict 寫法'''
+            site_data:dict= FilterData.get_selected_coordinate(sna=record[0], data=self.data)
+            print(site_data)
 
 def main():
     window = Window(theme='breeze')
