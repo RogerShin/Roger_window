@@ -3,6 +3,8 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import ubikedata
 from ubikedata import FilterData, Info
+from tools import CustomMessagebox
+
 
 class Window(ThemedTk):
     # 自定義
@@ -81,8 +83,8 @@ class Window(ThemedTk):
             # lat, lng = FilterData.get_selected_coordinate(sna=record[0], data=self.data)
             # print(lat, lng)
             '''dict 寫法'''
-            site_data:dict= FilterData.get_selected_coordinate(sna=record[0], data=self.data)
-            print(site_data)
+            site_data:Info= FilterData.get_selected_coordinate(sna=record[0], data=self.data)
+            CustomMessagebox(self, title=site_data.sna, site=site_data)
 
 
 def main():
