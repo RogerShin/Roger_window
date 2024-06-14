@@ -14,9 +14,15 @@ class Window(ThemedTk):
         except Exception as e:
             messagebox.showwarning(title='警告',message=str(e))
 
-        @property
-        def data(self) -> list[dict]:
-            return self.__data
+        self._display_interface()
+
+    def _display_interface(self):
+       mainFrame = ttk.Frame(width=500, height=800)
+       mainFrame.pack(expand=True, fill=tk.BOTH)
+
+    @property
+    def data(self) -> list[dict]:
+        return self.__data
 
 
 
