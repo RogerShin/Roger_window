@@ -1,6 +1,6 @@
 import requests
 from requests import Response
-from pydantic import BaseModel, RootModel, Field, field_validator
+from pydantic import BaseModel, RootModel, Field, field_validator,ConfigDict
 
 def __download_json():
     url = "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json"
@@ -26,10 +26,12 @@ class Info(BaseModel):
     lng:float = Field(alias="longitude")
     retuen_bikes:int = Field(alias="available_return_bikes")
 
+    model_config = ConfigDict(populate_by_name=True,)
+
     @field_validator("sna", mode='before')
     @classmethod
     def flex_string(cls, value:str) -> str:
-        return value.split(sep="_")[1]
+        return value.split(sep="_")[-1]
 
 class Youbike_Data(RootModel):
     root:list[Info]
@@ -65,15 +67,16 @@ def load_data() -> list[dict]:
 '''dict 寫法'''    
 class FilterData(object):
     @staticmethod
-    def get_selected_coordinate(sna:str, data:list[dict]) -> dict:
+    def get_selected_coordinate(sna:str, data:list[dict]) -> Info:
         # print(sna)
         # print(data)
         
-        def abc (item:dict) -> bool:
-            if item['sna'] == sna:
-                return True
-            else:
-                return False
+        # def abc (item:dict) -> bool:
+        #     if item['sna'] == sna:
+        #         return True
+        #     else:
+        #         return False
 
-        site_data:list[dict] = list(filter(abc, data))
-        return (site_data)
+        right_list:list[dict] = list(filter(lambda item:True if item['sna']==sna else False ,data))
+        data:dict = right_list[0]
+        return Info.model_validate(data)

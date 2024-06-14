@@ -2,7 +2,7 @@ from ttkthemes import ThemedTk
 import tkinter as tk
 from tkinter import ttk, messagebox
 import ubikedata
-from ubikedata import FilterData
+from ubikedata import FilterData, Info
 
 class Window(ThemedTk):
     # 自定義
@@ -83,6 +83,7 @@ class Window(ThemedTk):
             '''dict 寫法'''
             site_data:dict= FilterData.get_selected_coordinate(sna=record[0], data=self.data)
             print(site_data)
+
 
 def main():
     window = Window(theme='breeze')
