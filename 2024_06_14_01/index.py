@@ -33,7 +33,8 @@ class Window(ThemedTk):
        # =================================================
        tableFrame = ttk.Frame(mainFrame)
        columns = ('sna', 'sarea', 'mday', 'ar', 'total', 'rent_bikes', 'retuen_bikes')
-       tree = ttk.Treeview(tableFrame, columns=columns, show='headings')
+       # browse 只能單選
+       tree = ttk.Treeview(tableFrame, columns=columns, show='headings', selectmode='browse')
 
        # define headings
        tree.heading('sna', text='站點')
