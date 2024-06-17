@@ -52,11 +52,6 @@ class Window(ThemedTk):
 
        # bind使用者的事件
        tree.bind('<<TreeviewSelect>>', self.item_selected)
-
-       # generate sample data
-    #    contacts = []
-    #    for n in range(1, 100):
-    #         contacts.append((f'first {n}', f'last {n}', f'email{n}@example.com'))
         
        # add data to the treeview
        for site in self.data:
@@ -170,7 +165,6 @@ class PieChartFrame(ttk.Frame):
             plt.close()
 
             oneFrame.pack(side='left', expand=True, fill='both')
-
 
 def main(): 
     def on_closing():
