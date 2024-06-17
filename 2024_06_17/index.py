@@ -167,6 +167,7 @@ def main():
     def on_closing():
         print("手動關閉視窗")
         window.destroy()
+        window.quit()
 
     window = Window(theme='breeze')
     window.protocol("WM_DELETE_WINDOW", on_closing)
