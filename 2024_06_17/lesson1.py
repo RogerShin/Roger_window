@@ -45,7 +45,6 @@ class Example1(ttk.Frame):
         img = Image.open('tvdi.png')
         self.tvdi = ImageTk.PhotoImage(img)
         canvas.create_image(210, 10, anchor='nw', image=self.tvdi)
-
         canvas.pack(expand=True, fill='both')
         self.pack(expand=True, fill='both')
 
