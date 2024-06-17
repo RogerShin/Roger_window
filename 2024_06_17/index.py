@@ -155,13 +155,21 @@ class PieChartFrame(ttk.Frame):
             canvas = FigureCanvasTkAgg(figure, oneFrame)
             canvas.draw()
             canvas.get_tk_widget().grid(row=7, column=0, columnspan=2)
+        
+            # 顯示後馬上消滅canvas
+            for item in canvas.get_tk_widget(). find_all():
+                canvas.get_tk_widget().delete(item)
 
             oneFrame.pack(side='left', expand=True, fill='both')
 
 
-
 def main(): 
+    def on_closing():
+        print("手動關閉視窗")
+        window.destroy()
+
     window = Window(theme='breeze')
+    window.protocol("WM_DELETE_WINDOW", on_closing)
     window.mainloop()
 
 if __name__ == '__main__':
