@@ -150,10 +150,14 @@ class PieChartFrame(ttk.Frame):
             axes = figure.add_subplot()
             axes.pie(value, colors=colors,
                     labels=labels,
-                    labeldistance=0.4,
+                    labeldistance=1.2,
                     shadow=True,
                     autopct = lambda pct: func(pct, value),
                     textprops=dict(color="w"))
+            
+            axes.legend(title="Ingredients",
+                    loc="center left",
+                    bbox_to_anchor=(0, 0, 0, 2))
             
             canvas = FigureCanvasTkAgg(figure, oneFrame)
             canvas.draw()
