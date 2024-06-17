@@ -53,7 +53,7 @@ class Example1(ttk.Frame):
 class Example2(ttk.Frame):
     def __init__(self, master:Misc, **kwargs):
         super().__init__(master=master, **kwargs)
-        master.title('')
+        master.title('Matplotlib')
         # 寫法 1:
         self.configure({'borderwidth':2, 'relief':'groove'})
         # 寫法 2:
