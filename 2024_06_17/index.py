@@ -155,7 +155,7 @@ class PieChartFrame(ttk.Frame):
                     autopct = lambda pct: func(pct, value),
                     textprops=dict(color="w"))
             
-            axes.legend(title="Ingredients",
+            axes.legend(title="Rate:",
                     loc="center left",
                     bbox_to_anchor=(0, 0, 0, 2))
             
