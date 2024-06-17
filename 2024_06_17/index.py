@@ -74,19 +74,11 @@ class Window(ThemedTk):
     
     def item_selected(self, event):
         tree = event.widget
-        print(isinstance(tree, ttk.Treeview))
         for selected_item in tree.selection():
             item = tree.item(selected_item)
             record:list = item['values']
+            print(record)
             
-            '''tuple 寫法'''
-            # lat, lng = FilterData.get_selected_coordinate(sna=record[0], data=self.data)
-            # print(lat, lng)
-
-            '''dict 寫法'''
-            site_data:Info= FilterData.get_selected_coordinate(sna=record[0], data=self.data)
-            CustomMessagebox(self, title=site_data.sna, site=site_data)
-
 def main(): 
     window = Window(theme='breeze')
     window.mainloop()
