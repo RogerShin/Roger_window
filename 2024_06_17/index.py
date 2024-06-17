@@ -96,6 +96,9 @@ class PieChartFrame(ttk.Frame):
         # 寫法 3:
         # self['borderwidth']=2
         # self['relief']='groove'
+        style = ttk.Style()
+        style.configure('abc.TFrame', background='#ffffff')
+        self.configure(style='abc.TFrame')
 
     @property
     def infos(self) -> None:
@@ -114,7 +117,7 @@ class PieChartFrame(ttk.Frame):
             total:int = data[4]
             rents:int = data[5]
             returns:int = data[6]
-            oneFrame = ttk.Frame(self)
+            oneFrame = ttk.Frame(self, style="abc.TFrame")
             ttk.Label(oneFrame, text="行政區:").grid(row=0, column=0, sticky='e')
             ttk.Label(oneFrame, text=area).grid(row=0, column=1, sticky='w')
 
