@@ -21,12 +21,31 @@ class Example(ttk.Frame):
         canvas.pack(expand=True, fill='both')
         self.pack(expand=True, fill='both')
 
+class Example1(ttk.Frame):
+    def __init__(self, master:Misc, **kwargs):
+        super().__init__(master=master, **kwargs)
+        master.title('Colors')
+        # 寫法 1:
+        self.configure({'borderwidth':2, 'relief':'groove'})
+        # 寫法 2:
+        # self.config({'borderwidth':2, 'relief':'groove'})
+        # 寫法 3:
+        # self['borderwidth']=2
+        # self['relief']='groove'
+        # 畫線
+        canvas = tk.Canvas(self)
+        # 畫方形, 填色
+        canvas.create_rectangle(30, 10 ,120, 80, outline='#000', fill='#fb0')
+
+        canvas.pack(expand=True, fill='both')
+        self.pack(expand=True, fill='both')
+
 
 def main():
     window = tk.Tk()
     window.title("Frame的繼承")
-    Example(window)
-    window.geometry("400x250")
+    Example1(window)
+    window.geometry("400x100")
     window.mainloop()
 
 if __name__ == '__main__':
