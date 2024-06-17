@@ -82,7 +82,9 @@ class Window(ThemedTk):
             records.append(record)
         self.pieChartFrame.infos = records
 
-
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 class PieChartFrame(ttk.Frame):
     def __init__(self, master:Misc, **kwargs):
@@ -133,7 +135,27 @@ class PieChartFrame(ttk.Frame):
 
             ttk.Label(oneFrame, text="可還:").grid(row=6, column=0, sticky='e')
             ttk.Label(oneFrame, text=str(returns)).grid(row=6, column=1, sticky='w')
+
+            def func(pct, allvals):
+                absolute = int(np.round(pct/100.*np.sum(allvals)))
+                return f"{absolute:d} pcs - {pct:.1f}%"
+
+            value = [rents, returns]
+            labels = ['Rend', 'Return']
+            colors = ['green', 'red']
+            figure = plt.figure(figsize=(5, 5), dpi=72)
+            axes = figure.add_subplot()
+            axes.pie(value, colors=colors,
+                    labels=labels,
+                    labeldistance=0.4,
+                    shadow=True,
+                    autopct = lambda pct: func(pct, value),
+                    textprops=dict(color="w"))
             
+            canvas = FigureCanvasTkAgg(figure, oneFrame)
+            canvas.draw()
+            canvas.get_tk_widget().grid(row=7, column=0, columnspan=2)
+
             oneFrame.pack(side='left', expand=True, fill='both')
 
 
