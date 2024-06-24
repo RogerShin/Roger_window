@@ -27,7 +27,7 @@ class _Info(BaseModel):
     lng:float = Field(alias="longitude")
     retuen_bikes:int = Field(alias="available_return_bikes")
 
-    model_config = ConfigDict(populate_by_name=True,)
+    model_config = ConfigDict(populate_by_name=True)
 
     @field_validator("sna", mode='before')
     @classmethod
