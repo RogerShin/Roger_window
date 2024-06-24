@@ -32,7 +32,8 @@ def main():
             # 建立cursor, 寫入資料
             insert_sql = '''
                 INSERT INTO youbike(sna, sarea, ar, mday, updateTime, total, rent_bikes, return_bikes, lat, lng, act)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT();
             '''
             for site in all_data:
                 cursor.execute(insert_sql, (site['sna'],
@@ -48,6 +49,6 @@ def main():
                                             site['act']
                                             ))
     conn.close()
-    
+
 if __name__ == "__main__":
     main()
