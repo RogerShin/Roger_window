@@ -3,7 +3,7 @@ import ubikedata
 from dotenv import load_dotenv
 import os
 
-# 不上傳passkey
+# 不上傳Passwordkey
 load_dotenv()
 
 def main():
