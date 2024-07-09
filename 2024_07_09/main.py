@@ -5,7 +5,7 @@ app = Flask(__name__)
 # Use the route() decorator to bind a function to a URL.
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html.jinja")
 # route("/")
 @app.route("/hello")
 def hello():
