@@ -22,7 +22,7 @@
             {# {{ areas | join(',')}} #}
 
             <form action="{{url_for('index')}}" method="get">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example", name="area">
                     <option selected>請選擇行政區</option>
                     {% for area in areas %}
                     <option value="{{area}}">{{area}}</option>
