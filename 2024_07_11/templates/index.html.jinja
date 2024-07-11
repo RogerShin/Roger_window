@@ -21,10 +21,10 @@
         <div class="col-4" style="background-color: beige;">
             {# {{ areas | join(',')}} #}
             <select class="form-select" aria-label="Default select example">
-            <option selected>請選擇行政區</option>
-            {% for area in areas %}
-            <option value="1">{{area}}</option>
-            {% endfor %}
+                <option selected>請選擇行政區</option>
+                {% for area in areas %}
+                <option value="1">{{area}}</option>
+                {% endfor %}
             </select>
         </div>
 
