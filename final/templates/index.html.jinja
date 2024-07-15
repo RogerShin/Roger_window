@@ -18,7 +18,7 @@
 
     <div class="row">
 
-        <div class="col-2" style="background-color: beige;">
+        <div class="col-md-2 col-xl-3" style="background-color: beige;">
             {# {{ areas | join(',')}} #}
 
             <form action="{{url_for('index')}}" method="get">
@@ -35,7 +35,7 @@
             </form>
         </div>
 
-        <div class="col-10">
+        <div class="col-md-10 col-xl-9">
             <h3 style="text-align: left; margin-top:0.5em;">{{ show_area }}</h3>
             <table class="table table-striped">
                 <thead>
