@@ -28,6 +28,14 @@ app.layout = html.Div([
 def ser_cities_options(selected_country:str):
     return [{'label':i, 'value':i} for i in all_options[selected_country]]
 
+# 預設[0]，城市的初始值
+@callback(
+        Output('cities-radio', 'value'),
+        Input('cities-radio', 'options')
+)
+def set_cities_value(available_options):
+    return available_options[0]['value']
+
 # 回傳城市位於哪個國家
 @callback(
     Output('display-selected-values', 'children'),
