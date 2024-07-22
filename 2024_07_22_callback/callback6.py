@@ -3,8 +3,6 @@ import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
 
-
-
 app = Dash(__name__)
 
 app.layout = html.Div([
