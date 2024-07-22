@@ -9,7 +9,6 @@ all_options = {
     '加拿大':['Montreal', 'Toronto', 'Ottawa']
 }
 
-
 app.layout = html.Div([
     dcc.RadioItems(
         list(all_options.keys()),
@@ -21,6 +20,7 @@ app.layout = html.Div([
     html.Div(id='display-selected-values')
 ])
 
+# 選擇國家，顯示城市
 @callback(
     Output('cities-radio', 'options'),
     Input('countries-radio', 'value')
@@ -28,6 +28,7 @@ app.layout = html.Div([
 def ser_cities_options(selected_country:str):
     return [{'label':i, 'value':i} for i in all_options[selected_country]]
 
+# 回傳城市位於哪個國家
 @callback(
     Output('display-selected-values', 'children'),
     Input('countries-radio', 'value'),
