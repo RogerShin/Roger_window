@@ -2,11 +2,11 @@ from dash import Dash, dcc, html , Input, Output, callback
 import pandas as pd
 import plotly.express as ps
 
-app = Dash(__name__)
+app1 = Dash(__name__, requests_pathname_prefix='/dashboard/board1')
 
 df = pd.read_csv('https://plotly.github.io/datasets/country_indicators.csv')
 
-app.layout = html.Div([
+app1.layout = html.Div([
     html.Div([
 
         html.Div([
