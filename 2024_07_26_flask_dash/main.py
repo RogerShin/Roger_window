@@ -2,8 +2,11 @@ from flask import Flask, render_template, request
 import data
 
 app = Flask(__name__)
-
 @app.route("/")
+def index1():
+    return render_template("index1.html.jinja")
+
+@app.route("/index1")
 def index():
     # 方法1
     # print(list(map(lambda value:value[0], data.get_areas())))
