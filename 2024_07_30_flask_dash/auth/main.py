@@ -26,7 +26,7 @@ def index():
             if is_ok:
                 print(f"您好: {username}")
             else:
-                print("驗證錯誤")
+                print(f'密碼錯誤')
     else:
         print("這是第一次進入")
     return render_template('/auth/login.html.jinja', form=form)
