@@ -15,7 +15,7 @@ app2.layout = html.Div([
     dash_table.DataTable(id='sites_table')
 ])
 
-@callback(
+@app2.callback(
     Output('sites_table', 'data'),
     Input('areas', 'value')
 )
