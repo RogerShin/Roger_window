@@ -2,8 +2,17 @@
 
 {% block title %}
 登入頁面
-{% endblock  %}
+{% endblock %}
 
 {% block main %}
 <h1>登入</h1>
-{% endblock  %}
+<form method="post">
+    <div>
+        帳號email
+    </div>
+    <div>
+        密碼password
+    </div>
+    <input type="submit" value="確定">
+</form>
+{% endblock %}
